@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 *, ::before, ::after{
     margin:0px;
     padding: 0px;
@@ -17,7 +17,8 @@
     --colorBoton:#D83E23;
     --paddingGeneral:20px 50px;
     --fuenteLetra: 'Roboto', sans-serif;
-    --fuenteTitulo:'Abril Fatface', cursive;
+    --fuenteTitulo:cursive;
+    --fuenteCreativo:font-family: 'Parisienne', cursive;
 }
 
 /* NAVBAR ESTILOS */
@@ -418,6 +419,105 @@
     }
 }
 /* FIN HERO */
+/* INICIO DE SECCIONES GENERAL */
+.seccion{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--colorFondo);
+    padding: var(--paddingGeneral);
+}
+.subtiluloPrincipal{
+    color: var(--colorLetra);
+    text-align: left;
+    height: 10vh;
+    font-family: var(--fuenteTitulo);
+    font-size: 2.5rem;
+}
+.subtiluloPrincipal::after{
+    display: block;
+    content:"";
+    width: 80px;
+    height: 4px;
+    background-color: var(--colorLetra);
+}
+/* FIN SECCION GENERAL */
+
+
+/* SEECCION SOBRE MI */
+.seccion--about{
+    background-image: linear-gradient(to top, #000000bb 0%, #281d7a81 100%), url(../imagenes/mesaEstudio.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: max-content;
+}
+.about__container{
+    display: flex;
+    gap: 40px;
+    /* outline: 1px solid black; */
+    align-items:flex-start;
+}
+.about__retratoCont{
+    margin: auto;
+    width: 90%;
+    height: 300px;
+    border: 10px solid white;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+    transform: rotateZ(10deg);
+}
+.about__retratoCont>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 20%;
+}
+.about__parafo{
+    font-size: 1.1rem;
+    color: white;
+}
+.about__lista{
+    padding: 20px;
+}
+.about__lista>ul{
+    /* background-color: red; */
+    list-style-type: none;
+    color: var(--colorLetraOpt2);
+}
+.icono{
+    background-color: rgba(240, 240, 240, 0.322);
+    border-radius: 3px;
+    width: 30px;
+}
+.subtitulo3--about{
+    text-align: center;
+    color: var(--colorBoton);
+    font-size: 1.5rem;
+    margin: 10px 0px;
+}
+.about__conteinerWhy{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* background-color: red; */
+    gap:10px;
+    justify-content: space-evenly;
+    color: white;
+    /* background-color: red; */
+}
+.about__razones__card{
+    text-align: center;
+    flex-basis: 300px;
+    min-width: 300px;
+    background-color: #2d3063b7;
+    color: white;
+    /* box */
+}
+.about__razones__card>p{
+    padding: 5px;
+    text-align: left;
+}
+.about__razones__card>img{
+    width: 50px;
+}
 
 
 
@@ -490,27 +590,6 @@
     }
 }
 
-/* INICIO SECCIONES */
-.seccion{
-    width: 100%;
-    height: 100vh;
-    background-color: var(--colorFondo);
-    padding: var(--paddingGeneral);
-}
-.subtiluloPrincipal{
-    color: var(--colorLetra);
-    text-align: left;
-    height: 10vh;
-    font-family: var(--fuenteTitulo);
-    font-size: 2.5rem;
-}
-.subtiluloPrincipal::after{
-    display: block;
-    content:"";
-    width: 5%;
-    height: 4px;
-    background-color: var(--colorLetra);
-}
 
 
 
@@ -519,17 +598,18 @@
 
 
 
-.wavefooter{
+.waveFooter{
     width: 100%;
     height: 10vh;
+    background-color: red;
 }
-.waveFooter__path{
-    fill: var(--colorFondoOpt2);
-    /* stroke: #D83E23; */
-   
+.waveFooter__svg{
+    background-color:var(--colorFondo); 
+    fill:var(--colorFondoFooter)
 }
+
 .footer{
-    background-color:var(--colorFondoOpt2);
+    background-color:var(--colorFondoFooter);
     width: 100%;
     height: 30vh;
     display: flex;
@@ -559,8 +639,10 @@
     /* background-color: green; */
     min-width: 311px;
     width: 100%;
-    
-
+}
+.estudios__descripcion{
+    color: var(--colorLetra);
+    margin: 10px 0px;
 }
 .estudiosCertificadosCont{
     /* background-color: red; */
@@ -596,13 +678,14 @@
     background-image: url(../imagenes/certificados/seProgramar.jpg);  
 }
 @keyframes animacionCertificado{
-    0%{
+    0%,20%{
         transform: translateX(0%);
     }
-    50%{
+    45%,65%{
         transform: translateX(-33%);
     }
-    100%{
+
+    85%,100%{
         transform: translateX(-66%);
     }
 }
@@ -613,9 +696,10 @@
     width: 100%;
 }
 .subtitulo3{
-    text-align: left;
+    text-align: center;
     color: var(--colorBoton);
     font-size: 1.5rem;
+    margin: 10px 0px;
 }
 .subtitulo4{
     text-align: center;
@@ -737,4 +821,19 @@
 }
 .redes:hover{
     flex-grow: 1.5;
+}
+@media screen and (max-width:692px){
+    .estudiosConteinerPrincipal{
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width:384px){
+    :root{
+        --paddingGeneral:20px 15px;
+    }
+}
+
+
+.hola2{
+    color: white;
 }
