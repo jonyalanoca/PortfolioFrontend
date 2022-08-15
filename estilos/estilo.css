@@ -206,7 +206,7 @@ html{
 
 }
 .login__cardContainer{
-    width: 30%;
+    width:max-content;
     height: 80%;
     background-color: rgba(0, 0, 0, 0.699);
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.575);
@@ -214,6 +214,7 @@ html{
 }
 .login__form{
     height: 100%;
+    min-width: 1px;
     padding: 0px 30px;
     display: grid;
     grid-template-columns: 1fr;
@@ -224,10 +225,10 @@ html{
 .lectura{
     grid-row: 1/6;
     grid-column: 1/3;
-    width: 55%;
+    width:100%;
     margin: auto;
     margin-top: 20px;
-    height: max-content
+    height: 100%;
 }
 .login__box{
     outline: none;
@@ -954,6 +955,11 @@ background-color: rgb(26, 26, 26);
 
 
 /* FIN MEDIA QUERY 614*/
+
+@media screen and (max-width:1061px){
+
+}
+
 @media screen and (max-width:811px){
     .about__container{
         flex-wrap: wrap;
@@ -1001,7 +1007,7 @@ background-color: rgb(26, 26, 26);
         order: 3;
     }
 }
-@media screen and (max-width:692px){
+@media screen and (max-width:740px){
     .header__textContainer{
         grid-column: 4/-1;
         padding: 0px 5px;
@@ -1009,18 +1015,50 @@ background-color: rgb(26, 26, 26);
     .estudiosConteinerPrincipal{
         flex-wrap: wrap;
     }
-
+    .texto, .imagenDetras{
+        display: none;
+    }
+    .navbar__item{
+        grid-column: 4/8;
+    }
 }
 @media screen and (max-width:480px){
-/* para el footer y header */
-.footer__info{
-    padding-top:40px ;
-    width: 100%;
-    order: 1;
-}
+    .footer__info{
+        padding-top:40px ;
+        width: 100%;
+        order: 1;
+    }
+    .header{
+        justify-content: center;
+    }
+    .header__perfil{
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        z-index: 50;
+    }
+    .header__textContainer{
+        background-color: #050b2398;
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        z-index: 51;
+        justify-content: center;
+        gap: 20px;
+    }
+    .loginContainer{
+        z-index: 52;
+    }
+    .burgerContainer{
+        z-index: 53;
+    }
 }
 @media screen and (max-width:384px){
     :root{
         --paddingGeneral:20px 15px;
+    }
+    .navbar__item{
+        grid-column: 2/10;
+    }
+    .login__cardContainer{
+        background-color: transparent;
     }
 }
